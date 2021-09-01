@@ -1,12 +1,12 @@
 import React from "react";
-import LinePath from "@visx/shape";
+import { LinePath } from "@visx/shape";
 import { Group } from "@visx/group";
-import { LinechartProps } from "./interfaces";
+import { LineChartProps } from "./interfaces";
 import { AxisLeft, AxisBottom } from "@visx/axis";
 import { DataProps } from "interfaces/DataProps";
 import { AXIS_COLOR, AXIS_BOTTOM_TICK_LABEL_PROPS, AXIS_LEFT_TICK_LABEL_PROPS } from "./constants";
 
-const Linechart: React.FC<LinechartProps> = ({
+const Linechart: React.FC<LineChartProps> = ({
 	data,
 	width,
 	yMax,
@@ -18,7 +18,7 @@ const Linechart: React.FC<LinechartProps> = ({
 	stroke,
 	top,
 	left,
-	yTickFormat,
+	xTickFormat,
 	children
 }) => {
 	if(!data) return null;
@@ -53,7 +53,7 @@ const Linechart: React.FC<LinechartProps> = ({
 					tickStroke={AXIS_COLOR}
 					tickLabelProps={() => AXIS_LEFT_TICK_LABEL_PROPS}
 					tickFormat={(d) => {
-						return yTickFormat ? yTickFormat(d) : d;
+						return xTickFormat ? xTickFormat(d) : d;
 					}}
 				/>
 			)}
