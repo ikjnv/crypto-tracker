@@ -90,7 +90,7 @@ const PrimaryChart: React.FC<PrimaryChartProps> = ({
 					xScale={dateScale}
 					yScale={priceScale}
 					stroke={theme.colors.lapislazuli}
-					yTickFormat={(d) => {
+					xTickFormat={(d) => {
 						return numeral(d).format(d <= 100 ? "$0.00" : "$0,0");
 					}}
 				/>

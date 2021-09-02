@@ -15,6 +15,7 @@ ReactDOM.render(
 			<BrowserRouter>
 				<QueryParamProvider ReactRouterRoute={Route}>
 					<App />
+					<GlobalStyle />
 				</QueryParamProvider>
 			</BrowserRouter>
 		</ThemeProvider>

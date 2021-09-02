@@ -1,4 +1,4 @@
 export interface DataProps {
-	date: string | Date;
+	date: string;
 	price: number;
 };
