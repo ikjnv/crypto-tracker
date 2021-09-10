@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
-interface CoinlistType {
-	backgroundColor: string
-};
+export const CoinsContainer = styled.div`
+	background-color: "silver";
 
-export const CoinList = styled.div`
-	backgroundColor: "silver";
+	ul {
+		list-style-type: none;
+	}
+
+	ul li {
+		display: inline-block;
+		padding-left: 1%;
+		padding-right: 1%;
+	} 
 `;

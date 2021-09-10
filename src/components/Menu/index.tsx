@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CoinsProps } from './interfaces';
+import { CoinsContainer } from './styled';
 
 const Menu = () => {
 
@@ -19,16 +20,34 @@ const Menu = () => {
 	console.log(coins[0]);
 
 	return (
-		<div>
-			{coins && coins.map(c => (
-				<div key={c.id}>
-					<span>{c.name} </span>
-					<span>{c.symbol} </span>
-					<span>{c.current_price} </span>
-					<span>{c.price_change_percentage_24h} </span>
-				</div>
-			))}
-		</div>
+		<CoinsContainer>
+			<table>
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Price</th>
+						<th>24h %</th>
+						<th>7d %</th>
+						<th>Market Cap</th>
+						<th>Circulating supply</th>
+						<th>Last 7 Days</th>
+					</tr>
+				</thead>
+				<tbody>
+				{coins && coins.map(c => (
+					<tr key={c.id}>
+						<td>{c.market_cap_rank}</td>
+						<td>{c.symbol}</td>
+						<td>${c.current_price}</td>
+						<td>{c.price_change_percentage_24h}</td>
+						<td>{Math.floor(c.price_change_percentage_7d_in_currency)}</td>
+						<td>{c.market_cap}</td>
+					</tr>
+				))}
+				</tbody>
+			</table>
+		</CoinsContainer>
 	)
 };
 
