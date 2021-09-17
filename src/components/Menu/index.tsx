@@ -43,6 +43,7 @@ const Menu = () => {
 						<td>{c.price_change_percentage_24h}</td>
 						<td>{Math.floor(c.price_change_percentage_7d_in_currency)}</td>
 						<td>{c.market_cap}</td>
+						<td>{c.circulating_supply}</td>
 					</tr>
 				))}
 				</tbody>
