@@ -2,14 +2,25 @@ import styled from 'styled-components';
 
 export const CoinsContainer = styled.div`
 	background-color: "silver";
+	
+	#coin-icon {
+		width: 20%;
+		padding-left: 2%;
 
-	ul {
-		list-style-type: none;
+		img {
+			height: 10%;
+		}
+
+		td {
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 
-	ul li {
-		display: inline-block;
-		padding-left: 1%;
-		padding-right: 1%;
-	} 
+	table {
+	}
+
+	td {
+		text-align: center;
+	}
 `;

@@ -38,7 +38,12 @@ const Menu = () => {
 				{coins && coins.map(c => (
 					<tr key={c.id}>
 						<td>{c.market_cap_rank}</td>
-						<td>{c.symbol}</td>
+						<td id="coin-icon">
+							<tr>
+								<img src={c.image} alt="icon" />
+								<td>{c.name}</td>
+							</tr>
+						</td>
 						<td>${c.current_price}</td>
 						<td>{c.price_change_percentage_24h}</td>
 						<td>{Math.floor(c.price_change_percentage_7d_in_currency)}</td>
