@@ -4,20 +4,17 @@ export const CoinsContainer = styled.div`
 	background-color: "silver";
 	
 	#coin-icon {
-		width: 20%;
-		padding-left: 2%;
-
+		width: 3%;
 		img {
+			width: 60%;
 			height: 10%;
-		}
-
-		td {
-			margin-left: auto;
-			margin-right: auto;
 		}
 	}
 
-	table {
+	#coin-name {
+		float: left;
+		height: 20%;
+		font-weight: bold;
 	}
 
 	td {
