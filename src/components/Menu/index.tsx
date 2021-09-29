@@ -22,26 +22,25 @@ const Menu = () => {
 			<table>
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th></th>
-						<th>Price</th>
-						<th>24h %</th>
-						<th>7d %</th>
-						<th>Market Cap</th>
-						<th>Circulating supply</th>
-						<th>Last 7 Days</th>
+						<th className="mobile table-header">Name</th>
+						<th className="mobile table-header"></th>
+						<th className="mobile table-header">Price</th>
+						<th className="additional">24h %</th>
+						<th className="additional">7d %</th>
+						<th className="additional">Market Cap</th>
+						<th className="additional">Circulating supply</th>
 					</tr>
 				</thead>
 				<tbody>
 				{coins && coins.map(c => (
 					<tr key={c.id}>
-						<td id="coin-icon"><img src={c.image} alt="icon" /></td>
-						<td id="coin-name"><p>{c.name}</p></td>
-						<td>${c.current_price}</td>
-						<td>{c.price_change_percentage_24h}</td>
-						<td>{Math.floor(c.price_change_percentage_7d_in_currency)}</td>
-						<td>{c.market_cap}</td>
-						<td>{c.circulating_supply}</td>
+						<td className="mobile" id="coin-icon"><img src={c.image} alt="icon" /></td>
+						<td className="mobile" id="coin-name">{c.name}</td>
+						<td className="mobile" id="price">${Math.floor(c.current_price)}</td>
+						<td className="additional">{Math.floor(c.price_change_percentage_24h)}</td>
+						<td className="additional">{Math.floor(c.price_change_percentage_7d_in_currency)}</td>
+						<td className="additional">{Math.floor(c.market_cap)}</td>
+						<td className="additional">{Math.floor(c.circulating_supply)}</td>
 					</tr>
 				))}
 				</tbody>

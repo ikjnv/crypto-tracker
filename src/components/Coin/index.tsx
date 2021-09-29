@@ -3,7 +3,7 @@ import { CoinProps } from './interfaces';
 
 const Coin = () => {
 
-	const [data, setData] = useState<CoinProps>([]);
+	const [data, setData] = useState([]);
 
 	useEffect(() => {
 		try {
@@ -13,11 +13,14 @@ const Coin = () => {
 		} catch(err) {
 			console.log(err);
 		}
-	})
+	}, []);
+
+	console.log(data[0]);
 
 	return (
-		<>
-		</>
+		<div>
+			<p>Coin details</p>
+		</div>
 	);
 };
 
