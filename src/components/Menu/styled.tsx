@@ -11,12 +11,23 @@ export const CoinsContainer = styled.div`
 			padding-right: 25%;
 		}
 
+		.mobile th {
+			font-size: 24px;
+		}
+		
 		.mobile {
-			font-size: 46px;
 			img  {
 				width: 50%;
 			}
 			text-align: left;
+		}
+
+		th {
+			font-size: 36px;
+		}
+
+		td {
+			font-size: 46px;
 		}
 		
 		.additional {
@@ -34,18 +45,45 @@ export const CoinsContainer = styled.div`
 
 	@media only screen and (min-width: 1024px) {
 		width: 100%;
-
-		.mobile, .additional {
-			display: initial;
-			font-size: 26px;
-			img { width: 3%; }
-			text-align: center;
+		
+		.mobile {
+			img {
+				width: 80%;
+			}
+			border: 2px solid red;
 		}
 
-		th, td {
+		#coin-name {
+			width: 20%;
+			font-weight: bold;
+			padding-left: 1rem;
+		}
+
+		#coin-icon {
+			width: 3%;
+		}
+
+		#price {
+			width: 10%;
+		}
+
+		.additional {
+			display: inline flow;
+			width: 23%;
+			height: 5rem;
+			border: 2px solid blue;
+		}
+
+		th {
+			font-size: 16px;
+		}
+
+		td {
+			font-size: 20px;
+			text-align: center;
 			border: 1px solid black;
-			text-align: center;
 		}
+
 	}
 
 `;

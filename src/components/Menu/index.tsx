@@ -21,14 +21,14 @@ const Menu = () => {
 		<CoinsContainer>
 			<table>
 				<thead>
-					<tr>
+					<tr className="header">
 						<th className="mobile table-header">Name</th>
 						<th className="mobile table-header"></th>
 						<th className="mobile table-header">Price</th>
-						<th className="additional">24h %</th>
-						<th className="additional">7d %</th>
+						<th className="additional">24h%</th>
+						<th className="additional">7d%</th>
 						<th className="additional">Market Cap</th>
-						<th className="additional">Circulating supply</th>
+						<th className="additional">Supply</th>
 					</tr>
 				</thead>
 				<tbody>
