@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CoinsProps } from './interfaces';
 import { CoinsContainer } from './styled';
+import Coin from '../CoinBlock';
 
 const Menu = () => {
 
@@ -34,13 +35,7 @@ const Menu = () => {
 				<tbody>
 				{coins && coins.map(c => (
 					<tr key={c.id}>
-						<td className="mobile" id="coin-icon"><img src={c.image} alt="icon" /></td>
-						<td className="mobile" id="coin-name">{c.name}</td>
-						<td className="mobile" id="price">${Math.floor(c.current_price)}</td>
-						<td className="additional">{Math.floor(c.price_change_percentage_24h)}</td>
-						<td className="additional">{Math.floor(c.price_change_percentage_7d_in_currency)}</td>
-						<td className="additional">{Math.floor(c.market_cap)}</td>
-						<td className="additional">{Math.floor(c.circulating_supply)}</td>
+						<Coin coin={c} />
 					</tr>
 				))}
 				</tbody>

@@ -1,9 +1,9 @@
 import React from 'react';
-import Menu from './components/Menu';
+import Routes from './routes';
 
 const App: React.FC = () => {
 	return (
-		<Menu />
+		<Routes />
 	)
 };
 

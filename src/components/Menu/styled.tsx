@@ -86,4 +86,7 @@ export const CoinsContainer = styled.div`
 
 	}
 
+	@media only screen and (max-width: 1338px) {
+		width: 80%;
+	}
 `;
