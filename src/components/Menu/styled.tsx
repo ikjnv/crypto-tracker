@@ -7,7 +7,7 @@ export const CoinsContainer = styled.div`
 		margin-left: auto;
 
 		#coin-name {
-			width: 60%;
+			width: 70%;
 			padding-right: 25%;
 		}
 
@@ -43,50 +43,67 @@ export const CoinsContainer = styled.div`
 		}
 	}
 
-	@media only screen and (min-width: 1024px) {
-		width: 100%;
-		
-		.mobile {
-			img {
-				width: 80%;
-			}
-			border: 2px solid red;
-		}
+	@media only screen and (min-width: 768px) {
+		margin-right: auto;
+		margin-left: auto;
 
 		#coin-name {
-			width: 20%;
-			font-weight: bold;
-			padding-left: 1rem;
+			width: 70%;
+			padding-right: 25%;
 		}
 
-		#coin-icon {
-			width: 3%;
+		.mobile th {
+			font-size: 24px;
 		}
-
-		#price {
-			width: 10%;
-		}
-
-		.additional {
-			display: inline flow;
-			width: 23%;
-			height: 5rem;
-			border: 2px solid blue;
+		
+		.mobile {
+			img  {
+				width: 50%;
+				margin-left: 20%;
+			}
+			text-align: left;
 		}
 
 		th {
-			font-size: 16px;
+			font-size: 36px;
 		}
 
 		td {
-			font-size: 20px;
-			text-align: center;
-			border: 1px solid black;
+			font-size: 46px;
+		}
+		
+		.additional {
+			display: none;
 		}
 
+		td {
+			padding: 20px 0px 0px;
+		}
+
+		th {
+			padding: 20px 2px 30px;
+		}
 	}
 
-	@media only screen and (max-width: 1338px) {
-		width: 80%;
+	@media only screen and (min-width: 1024px) {
+		#coin-icon {
+			width: 5%;
+		}
+
+		#coin-name {
+			text-align: left;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		.general {
+			img {
+				width: 100%;
+			}
+		}
+
+		td {
+			text-align: center;
+		}
 	}
 `;

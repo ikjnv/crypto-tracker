@@ -23,13 +23,13 @@ const Menu = () => {
 			<table>
 				<thead>
 					<tr className="header">
-						<th className="mobile table-header">Name</th>
-						<th className="mobile table-header"></th>
-						<th className="mobile table-header">Price</th>
-						<th className="additional">24h%</th>
-						<th className="additional">7d%</th>
-						<th className="additional">Market Cap</th>
-						<th className="additional">Supply</th>
+						<th className="general mobile table-header">Name</th>
+						<th className="general mobile table-header"></th>
+						<th className="general mobile table-header">Price</th>
+						<th className="general additional">24h%</th>
+						<th className="general additional">7d%</th>
+						<th className="general additional">Market Cap</th>
+						<th className="general additional">Supply</th>
 					</tr>
 				</thead>
 				<tbody>
