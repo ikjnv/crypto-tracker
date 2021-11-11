@@ -86,24 +86,5 @@ export const CoinsContainer = styled.div`
 	}
 
 	@media only screen and (min-width: 1024px) {
-		#coin-icon {
-			width: 5%;
-		}
-
-		#coin-name {
-			text-align: left;
-			font-size: 20px;
-			font-weight: bold;
-		}
-
-		.general {
-			img {
-				width: 100%;
-			}
-		}
-
-		td {
-			text-align: center;
-		}
 	}
 `;

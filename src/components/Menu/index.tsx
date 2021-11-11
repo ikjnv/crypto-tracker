@@ -5,16 +5,18 @@ import Coin from '../CoinBlock';
 
 const Menu = () => {
 
-	const [coins, setCoins] = useState<CoinsProps>([]);
+	const [coins, setCoins] = useState<CoinsProps>();
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		try {
-			fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&price_change_percentage=1h%2C24h%2C7d')
+			fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
 				.then((res) => res.json())
-				.then((res) => setCoins(res))
+				.then((res) => {
+					setCoins(res);
+				});
 		} catch(e) {
-			console.log(e);
+			console.error('menu error', e);
 		}
 	}, []);
 
@@ -22,20 +24,20 @@ const Menu = () => {
 		<CoinsContainer>
 			<table>
 				<thead>
-					<tr className="header">
-						<th className="general mobile table-header">Name</th>
-						<th className="general mobile table-header"></th>
-						<th className="general mobile table-header">Price</th>
-						<th className="general additional">24h%</th>
-						<th className="general additional">7d%</th>
-						<th className="general additional">Market Cap</th>
-						<th className="general additional">Supply</th>
+					<tr>
+						<th className="mobile">Name</th>
+						<th className="mobile"></th>
+						<th className="mobile">Price</th>
+						<th className="additional">24h%</th>
+						<th className="additional">7d%</th>
+						<th className="additional">Market Cap</th>
+						<th className="additional">Supply</th>
 					</tr>
 				</thead>
 				<tbody>
 				{coins && coins.map(c => (
 					<tr key={c.id}>
-						<Coin coin={c} />
+						<Coin item={c} />
 					</tr>
 				))}
 				</tbody>
