@@ -30,6 +30,16 @@ function convert(arg: ChartProps[]) {
 	return temp;
 };
 
+function findMax(arg: ConvertedChartProps[]) {
+	let m: number = 0;
+	arg.map((ch: ConvertedChartProps) => {
+		if(m < ch.price) {
+			m = ch.price;
+		}
+	});
+	return m;
+};
+
 const ChartBlock = ({ id, name, symbol }: CoinProps) => {
 	const [chartData, setChartData] = React.useState<ConvertedChartProps[]>();
 	const ref = React.useRef<HTMLDivElement>(null);
@@ -71,7 +81,10 @@ const ChartBlock = ({ id, name, symbol }: CoinProps) => {
 				.domain(xDomain)
 				.range([margin.left, width - margin.right]);
 
-			const yMax = d3.max(chartData, d => d.price);
+			let yMax: number = findMax(chartData);
+
+			console.log('max', yMax);
+
 			const y = d3.scaleLinear()
 				.domain([0, yMax]).nice()
 				.range([height - margin.bottom, margin.top]);
