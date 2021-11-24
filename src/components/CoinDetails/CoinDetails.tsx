@@ -37,7 +37,7 @@ const CoinDetails = (props: CoinProps) => {
 			{coinDetails && (
 				<>
 					<p>{coinDetails.name}</p>
-					<div>
+					<div style={{ width: 500 }}>
 						<ChartBlock {...coinDetails} />
 					</div>
 				</>
