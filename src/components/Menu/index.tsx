@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { CoinsProps } from './interfaces';
 import { CoinsContainer } from './styled';
-import Coin from '../CoinBlock';
+import Coin from '../CoinBlock/index';
 
 const Menu = () => {
-
 	const [coins, setCoins] = useState<CoinsProps>();
-	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		try {
@@ -19,6 +17,8 @@ const Menu = () => {
 			console.error('menu error', e);
 		}
 	}, []);
+
+	console.log('details', coins);
 
 	return (
 		<CoinsContainer>
@@ -37,7 +37,7 @@ const Menu = () => {
 				<tbody>
 				{coins && coins.map(c => (
 					<tr key={c.id}>
-						<Coin item={c} />
+						<Coin {...c} />
 					</tr>
 				))}
 				</tbody>

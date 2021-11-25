@@ -1,25 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ChartBlock from '../CoinBlock/Chart';
+import { detailProps, coinProps } from './interfaces';
 
-interface CoinProps {
-	id:	string;
-	symbol:	string;
-	name:	string;
-	match: {
-		params: {
-			id:	string
-		}
-	}
-};
-
-interface detailProps {
-	id: string;
-	symbol:	string;
-	name:	string;
-};
-
-const CoinDetails = (props: CoinProps) => {
-
+const CoinDetails = (props: coinProps) => {
 	const [coinDetails, setCoinDetails] = useState<detailProps>();
 
 	useEffect(() => {
@@ -37,6 +20,7 @@ const CoinDetails = (props: CoinProps) => {
 			{coinDetails && (
 				<>
 					<p>{coinDetails.name}</p>
+					<p>{coinDetails.description.en}</p>
 					<div style={{ width: 500 }}>
 						<ChartBlock {...coinDetails} />
 					</div>

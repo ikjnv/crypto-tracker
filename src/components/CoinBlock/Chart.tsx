@@ -108,7 +108,6 @@ const ChartBlock = ({ id, name, symbol }: CoinProps) => {
 
 	return (
 		<>
-			<h4>Line chart</h4>
 			<div ref={ref} style={{ width: '100%', height: height }}>
 			</div>
 		</>
