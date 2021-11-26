@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { CoinsProps } from './interfaces';
 import { CoinsContainer } from './styled';
 import Coin from '../CoinBlock/index';
@@ -10,15 +10,11 @@ const Menu = () => {
 		try {
 			fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
 				.then((res) => res.json())
-				.then((res) => {
-					setCoins(res);
-				});
+				.then((res) => setCoins(res));
 		} catch(e) {
 			console.error('menu error', e);
 		}
 	}, []);
-
-	console.log('details', coins);
 
 	return (
 		<CoinsContainer>

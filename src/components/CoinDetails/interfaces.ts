@@ -1,10 +1,14 @@
 export interface detailProps {
-	id:			string;
-	name:		string;
+	id:					string;
+	name:				string;
 	description: {
-		en:	string;
+		en:				string;
 	};
-	symbol:	string;
+	symbol:			string;
+	image: {
+		large:		string;
+		small:		string;
+	}
 };
 
 export interface coinProps {

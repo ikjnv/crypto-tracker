@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ChartBlock from '../Chart/index';
 import { detailProps, coinProps } from './interfaces';
+import { CoinDetailsContainer } from './styled';
 
 const CoinDetails = (props: coinProps) => {
 	const [coinDetails, setCoinDetails] = useState<detailProps>();
@@ -19,9 +20,13 @@ const CoinDetails = (props: coinProps) => {
 		<>
 			{coinDetails && (
 				<>
-					<p>{coinDetails.name}</p>
-					<p>{coinDetails.description.en}</p>
-					<div style={{ width: 500 }}>
+					<CoinDetailsContainer>
+						<div className="first-block">
+							<img id="icon" src={coinDetails.image.large} alt={`${coinDetails.name}`} />
+							<h1>{coinDetails.name}</h1>
+						</div>
+					</CoinDetailsContainer>
+					<div>
 						<ChartBlock {...coinDetails} />
 					</div>
 				</>

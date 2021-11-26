@@ -2,12 +2,10 @@ import React from 'react';
 import * as d3 from 'd3';
 import { CoinProps, ChartProps } from './interfaces';
 import findMax from '../../utils/findMax';
-import { ChartBlockDiv } from './styled';
 
 const ChartBlock = ({ id }: CoinProps) => {
 	const [chartData, setChartData] = React.useState<ChartProps[]>();
 	const ref = React.useRef<HTMLDivElement>(null);
-	const height = 300;
 
 	React.useEffect(() => {
 		try {
@@ -22,13 +20,15 @@ const ChartBlock = ({ id }: CoinProps) => {
 	React.useEffect(() => {
 		if (chartData) {
 			const margin = { top: 20, right: 30, bottom: 30, left: 40 };
-			const width = height / .6;
+			const height = window.innerHeight / 2;
+			const width = window.innerWidth / 2;
 			const currentElement = ref.current;
 
 			const documentElement = d3.select(currentElement)
 				.call(g => g.select('svg').remove())
 				.append('svg')
-				.attr('viewBox', `0, 0, ${width}, ${height}`);
+				.attr('viewBox', `0, 0, ${width}, ${height}`)
+				.attr("preserveAspectRatio", "xMinYMin meet");
 
 			const data = chartData.map((ch: any) => ({
 				date: new Date(ch[0]),
@@ -56,7 +56,7 @@ const ChartBlock = ({ id }: CoinProps) => {
 
 			const xAxis = (g: any) => g
 				.attr("transform", `translate(0, ${height - margin.bottom})`)
-				.call(d3.axisBottom(x).ticks(width / 80).tickSizeOuter(0));
+				.call(d3.axisBottom(x).ticks(width / 100).tickSizeOuter(0));
 
 			documentElement.append<SVGGElement>('g')
 				.call(xAxis);
@@ -82,8 +82,15 @@ const ChartBlock = ({ id }: CoinProps) => {
 
 	return (
 		<>
-			<ChartBlockDiv ref={ref}>
-			</ChartBlockDiv>
+			<div
+				ref={ref}
+				style={{
+					width: `60%`,
+					border: '0.3px solid silver',
+					borderRadius: '1%'
+				}}
+			>
+			</div>
 		</>
 	);
 }
