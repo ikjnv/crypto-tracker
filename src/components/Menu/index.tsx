@@ -21,21 +21,19 @@ const Menu = () => {
 			<table>
 				<thead>
 					<tr>
-						<th className="mobile">Name</th>
-						<th className="mobile"></th>
-						<th className="mobile">Price</th>
-						<th className="additional">24h%</th>
-						<th className="additional">7d%</th>
-						<th className="additional">Market Cap</th>
-						<th className="additional">Supply</th>
+						<th>Name</th>
+						<th>Price</th>
+						<th>24h%</th>
+						<th>7d%</th>
+						<th>Market Cap</th>
 					</tr>
 				</thead>
-				<tbody>
-				{coins && coins.map(c => (
-					<tr key={c.id}>
-						<Coin {...c} />
-					</tr>
-				))}
+				<tbody id="body">
+					{coins && coins.map(c => (
+						<tr key={c.id}>
+							<Coin {...c} />
+						</tr>
+					))}
 				</tbody>
 			</table>
 		</CoinsContainer>

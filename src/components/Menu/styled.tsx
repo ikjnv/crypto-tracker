@@ -1,90 +1,31 @@
 import styled from 'styled-components';
 
 export const CoinsContainer = styled.div`
-	@media only screen and (min-width: 425px) {
-		width: 90%;
-		margin-right: auto;
-		margin-left: auto;
+	display: block;
+	width: 100%;
+	text-align: center;
 
-		#coin-name {
-			width: 70%;
-			padding-right: 25%;
-		}
+	table {
+		display: table;
+		width: 100%;
+		background-color: azure;
+		text-indent: initial;
+	};
 
-		.mobile th {
-			font-size: 24px;
-		}
-		
-		.mobile {
-			img  {
-				width: 50%;
-			}
-			text-align: left;
-		}
+	tbody {
+		border: 2px solid red;
+		display: table-row-group;
+		vertical-align: middle;
+	};
 
-		th {
-			font-size: 36px;
-		}
+	tr {
+		display: table-row;
+		border-color: inherit;
+		vertical-align: inherit;
+	};
 
-		td {
-			font-size: 46px;
-		}
-		
-		.additional {
-			display: none;
-		}
-
-		td {
-			padding: 20px 0px 0px;
-		}
-
-		th {
-			padding: 20px 2px 30px;
-		}
-	}
-
-	@media only screen and (min-width: 768px) {
-		margin-right: auto;
-		margin-left: auto;
-
-		#coin-name {
-			width: 70%;
-			padding-right: 25%;
-		}
-
-		.mobile th {
-			font-size: 24px;
-		}
-		
-		.mobile {
-			img  {
-				width: 50%;
-				margin-left: 20%;
-			}
-			text-align: left;
-		}
-
-		th {
-			font-size: 36px;
-		}
-
-		td {
-			font-size: 46px;
-		}
-		
-		.additional {
-			display: none;
-		}
-
-		td {
-			padding: 20px 0px 0px;
-		}
-
-		th {
-			padding: 20px 2px 30px;
-		}
-	}
-
-	@media only screen and (min-width: 1024px) {
-	}
+	td {
+		display: table-cell;
+		vertical-align: inherit;
+	};
 `;

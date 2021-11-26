@@ -14,7 +14,7 @@ const CoinDetails = (props: coinProps) => {
 		} catch (err) {
 			console.log(err);
 		};
-	}, [props.match.params.id]);
+	}, []);
 
 	return (
 		<>
