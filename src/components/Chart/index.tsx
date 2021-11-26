@@ -1,33 +1,10 @@
 import React from 'react';
 import * as d3 from 'd3';
+import { CoinProps, ChartProps } from './interfaces';
+import findMax from '../../utils/findMax';
+import { ChartBlockDiv } from './styled';
 
-interface CoinProps {
-	id:		string;
-	name:	string;
-	symbol:	string;
-};
-
-interface ChartProps {
-	0:	number;
-	1:	number;
-};
-
-interface ConvertedChartProps {
-	date:	Date;
-	price:	number;
-};
-
-function findMax(arg: ConvertedChartProps[]) {
-	let m: number = 0;
-	arg.map((ch: ConvertedChartProps) => {
-		if(m < ch.price) {
-			m = ch.price;
-		}
-	});
-	return m;
-};
-
-const ChartBlock = ({ id, name, symbol }: CoinProps) => {
+const ChartBlock = ({ id }: CoinProps) => {
 	const [chartData, setChartData] = React.useState<ChartProps[]>();
 	const ref = React.useRef<HTMLDivElement>(null);
 	const height = 300;
@@ -47,14 +24,11 @@ const ChartBlock = ({ id, name, symbol }: CoinProps) => {
 			const margin = { top: 20, right: 30, bottom: 30, left: 40 };
 			const width = height / .6;
 			const currentElement = ref.current;
-			const svg = d3.select(currentElement);
 
 			const documentElement = d3.select(currentElement)
 				.call(g => g.select('svg').remove())
 				.append('svg')
 				.attr('viewBox', `0, 0, ${width}, ${height}`);
-
-			const parseDate: any = d3.timeParse("%Y-%m-%d");
 
 			const data = chartData.map((ch: any) => ({
 				date: new Date(ch[0]),
@@ -108,8 +82,8 @@ const ChartBlock = ({ id, name, symbol }: CoinProps) => {
 
 	return (
 		<>
-			<div ref={ref} style={{ width: '100%', height: height }}>
-			</div>
+			<ChartBlockDiv ref={ref}>
+			</ChartBlockDiv>
 		</>
 	);
 }

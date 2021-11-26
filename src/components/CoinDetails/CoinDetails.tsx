@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import ChartBlock from '../CoinBlock/Chart';
+import ChartBlock from '../Chart/index';
 import { detailProps, coinProps } from './interfaces';
 
 const CoinDetails = (props: coinProps) => {
