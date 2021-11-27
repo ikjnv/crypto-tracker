@@ -1,21 +1,10 @@
 import React from 'react';
 import * as d3 from 'd3';
-import { CoinProps, ChartProps } from './interfaces';
+import { ChartProps } from './interfaces';
 import findMax from '../../utils/findMax';
 
-const ChartBlock = ({ id }: CoinProps) => {
-	const [chartData, setChartData] = React.useState<ChartProps[]>();
+const ChartBlock = (chartData: ChartProps[]) => {
 	const ref = React.useRef<HTMLDivElement>(null);
-
-	React.useEffect(() => {
-		try {
-			fetch(`https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=7`)
-				.then((res) => res.json())
-				.then((res) => setChartData(res.prices));
-		} catch (err) {
-			console.error(err);
-		}
-	}, [id]);
 
 	React.useEffect(() => {
 		if (chartData) {
@@ -30,7 +19,7 @@ const ChartBlock = ({ id }: CoinProps) => {
 				.attr('viewBox', `0, 0, ${width}, ${height}`)
 				.attr("preserveAspectRatio", "xMinYMin meet");
 
-			const data = chartData.map((ch: any) => ({
+			const data = Object.values(chartData).map((ch: any) => ({
 				date: new Date(ch[0]),
 				price: ch[1]
 			}));
@@ -40,8 +29,8 @@ const ChartBlock = ({ id }: CoinProps) => {
 				.y((value: any) => y(value.price));
 
 			const xDomain = [
-				new Date(chartData[0][0]),
-				new Date(chartData[chartData.length - 1][0])
+				new Date(Object.values(chartData)[0][0]),
+				new Date(Object.values(chartData)[Object.values(chartData).length - 1][0])
 			];
 
 			const x = d3.scaleUtc()

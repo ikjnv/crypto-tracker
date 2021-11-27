@@ -1,11 +1,6 @@
-export interface CoinProps {
-	id:			string;
-	name:		string;
-};
-
 export interface ChartProps {
-	0:	number;
-	1:	number;
+	0:		number;
+	1:		number;
 };
 
 export interface ConvertedChartProps {
