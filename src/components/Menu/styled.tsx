@@ -28,4 +28,20 @@ export const CoinsContainer = styled.div`
 		display: table-cell;
 		vertical-align: inherit;
 	};
+
+	.icon-name {
+		display: flex;
+		padding-left: 30%;
+
+		a {
+			color: black;
+			font-weight: bold;
+			text-decoration: none;
+		}
+	}
+
+	img {
+		width: 7%;
+		vertical-align: middle;
+	}
 `;

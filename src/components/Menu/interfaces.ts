@@ -1,4 +1,4 @@
-export interface CoinProps {
+export interface CoinProp {
 	id:																			string
 	market_cap_rank:												number
 	name:																		string
@@ -13,4 +13,4 @@ export interface CoinProps {
 	total_volume:														number
 };
 
-export type CoinsProps = CoinProps[];
+export type CoinsProps = CoinProp[];

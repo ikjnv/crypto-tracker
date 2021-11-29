@@ -27,9 +27,7 @@ const Menu = () => {
 				</thead>
 				<tbody id="body">
 					{coins && coins.map(c => (
-						<tr key={c.id}>
-							<Coin {...c} />
-						</tr>
+						<Coin {...c} key={c.id} />
 					))}
 				</tbody>
 			</table>
