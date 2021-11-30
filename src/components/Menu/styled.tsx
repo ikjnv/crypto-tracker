@@ -1,47 +1,58 @@
 import styled from 'styled-components';
 
 export const CoinsContainer = styled.div`
-	display: block;
-	width: 100%;
-	text-align: center;
-
+	display: flex;
+	justify-content: center;
+	
 	table {
-		display: table;
-		width: 100%;
-		background-color: azure;
-		text-indent: initial;
+		width: 80%;
 	};
 
 	tbody {
 		border: 2px solid red;
-		display: table-row-group;
 		vertical-align: middle;
 	};
 
 	tr {
-		display: table-row;
-		border-color: inherit;
-		vertical-align: inherit;
+		border-top: 1px solid silver;
 	};
 
+	th {
+		text-align: right;
+	}
+
 	td {
-		display: table-cell;
-		vertical-align: inherit;
+		height: 2.5rem;
+		text-align: right;
 	};
 
 	.icon-name {
-		display: flex;
-		padding-left: 30%;
+		width: 25%;
+		padding-left: 5%;
+		text-align: left;
 
 		a {
 			color: black;
 			font-weight: bold;
 			text-decoration: none;
 		}
+
+		img {
+			width: 10%;
+			vertical-align: middle;
+		}
 	}
 
-	img {
-		width: 7%;
-		vertical-align: middle;
+	#name {
+		text-align: center;
 	}
+
+	#minichart {
+		text-align: center;
+	}
+`;
+
+export const Loading = styled.div`
+	text-align: center;
+	margin-top: 15%;
 `;
