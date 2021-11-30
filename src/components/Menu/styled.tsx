@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const BodyBlock = styled.div`
+	display: block;
+`;
+
 export const CoinsContainer = styled.div`
 	display: flex;
 	justify-content: center;
@@ -55,4 +59,16 @@ export const CoinsContainer = styled.div`
 export const Loading = styled.div`
 	text-align: center;
 	margin-top: 15%;
+`;
+
+export const ErrorMessage = styled.div`
+	text-align: center;
+	color: red;
+	margin-top: 15%;
+`;
+
+export const Pagination = styled.div`
+	display: block;
+	text-align: center;
+	border: 1px solid black;
 `;
